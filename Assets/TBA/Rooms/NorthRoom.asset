@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65041af5c71d9a74baf590288b150512, type: 3}
+  m_Name: NorthRoom
+  m_EditorClassIdentifier: 
+  Description: Another small room!
+  Name: North Room
+  Exits:
+  - KeyString: south
+    Description: There is a small door to the south.
+    ValueRoom: {fileID: 11400000, guid: aa39d7feb239d1e458838d329a5bcad3, type: 2}
