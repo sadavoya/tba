@@ -13,6 +13,8 @@ public class GameController : MonoBehaviour {
     [HideInInspector]
     public RoomNavigation roomNavigation;
     [HideInInspector]
+    public InteractableItems interactableItems;
+    [HideInInspector]
     public List<string> interactiveDescriptionsInRoom = new List<string>();
     [HideInInspector]
     public Dictionary<string, InputAction> InputActions = new Dictionary<string, InputAction>();
@@ -22,6 +24,7 @@ public class GameController : MonoBehaviour {
     void Awake()
     {
         roomNavigation = GetComponent<RoomNavigation>();
+        interactableItems = GetComponent<InteractableItems>();
     }
 
     // Use this for initialization
@@ -66,10 +69,45 @@ public class GameController : MonoBehaviour {
     }
     void unpackRoom()
     {
+        PrepareObjectsToTakeOrExamine(roomNavigation.CurrentRoom);
         roomNavigation.unpackExitsInRoom();
+    }
+
+    void PrepareObjectsToTakeOrExamine(Room currentRoom)
+    {
+        for (int i = 0; i < currentRoom.Interactables.Length; i++)
+        {
+            string descNotInInventory = interactableItems.GetObjectsNotInInventory(currentRoom, i);
+
+            if (descNotInInventory != null)
+            {
+                interactiveDescriptionsInRoom.Add(descNotInInventory);
+            }
+
+            var interactable = currentRoom.Interactables[i];
+            for (int j = 0; j < interactable.Interactions.Length; j++)
+            {
+                var interaction = interactable.Interactions[j];
+                if (interaction.Action.Keyword == "examine")
+                {
+                    interactableItems.examineDict.Add(interactable.Noun, interaction.Response);
+                }
+            }
+        }
+
+    }
+
+    public string TestVerDictWithNoun(Dictionary<string, string> verbDict, string verb, string noun)
+    {
+        if (verbDict.ContainsKey(noun))
+        {
+            return verbDict[noun];
+        }
+        return string.Format("You can't {0} {1}.", verb, noun);
     }
     void clearCollectionsForNewRoom()
     {
+        interactableItems.ClearCollections();
         interactiveDescriptionsInRoom.Clear();
         roomNavigation.ClearExits();
     }

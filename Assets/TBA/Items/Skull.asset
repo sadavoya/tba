@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52b823aac56a1ae4a88fc841ff73410d, type: 3}
   m_Name: Skull
   m_EditorClassIdentifier: 
-  Noun: Skull
+  Noun: skull
   Description: A weathered human skull lies in a corner.
   Interactions:
   - Action: {fileID: 11400000, guid: 5b8de30fc7dfdd342a4a191a7a486393, type: 2}

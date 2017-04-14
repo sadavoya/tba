@@ -17,3 +17,8 @@ MonoBehaviour:
   - KeyString: north
     Description: There is a small opening to the north.
     ValueRoom: {fileID: 11400000, guid: fe992fb35f72ab343a9c7be8ad875b63, type: 2}
+  - KeyString: east
+    Description: There is a medium opening to the east.
+    ValueRoom: {fileID: 11400000, guid: a7de7bffd6394544c8ced772d9e357b7, type: 2}
+  Interactables:
+  - {fileID: 11400000, guid: 0cea34ddb675eee47ac718609270019e, type: 2}

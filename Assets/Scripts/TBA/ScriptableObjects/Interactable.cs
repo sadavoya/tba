@@ -4,7 +4,7 @@ using UnityEngine;
 
 [CreateAssetMenu(menuName = "Text Adventure/Interactable")]
 public class Interactable : ScriptableObject {
-    public string Noun = "Noun";
+    public string Noun = "name";
     [TextArea]
     public string Description = "Description in room";
 

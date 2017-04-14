@@ -8,6 +8,6 @@ public class Examine : InputAction
 {
     public override void RespondToInput(GameController gc, string[] separatedInputWords)
     {
-        gc.logStringWithReturn(string.Format("You examine the {0}", separatedInputWords[1]));
+        gc.logStringWithReturn(gc.TestVerDictWithNoun(gc.interactableItems.examineDict, separatedInputWords[0], separatedInputWords[1]));
     }
 }
