@@ -21,4 +21,9 @@ public class InteractableItems : MonoBehaviour {
         }
         return null;
     }
+    public void ClearCollections()
+    {
+        examineDict.Clear();
+        nounsInRoom.Clear();
+    }
 }
