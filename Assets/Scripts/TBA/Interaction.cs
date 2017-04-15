@@ -6,4 +6,5 @@ using UnityEngine;
 public class Interaction {
     public InputAction Action;
     public string Response;
+    public ActionResponse ActionResponse;
 }
