@@ -9,15 +9,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 65041af5c71d9a74baf590288b150512, type: 3}
-  m_Name: EastRoom
+  m_Name: OrbRoomOpen
   m_EditorClassIdentifier: 
-  Description: A room with a snowman.
-  Name: EastRoom
+  Description: There is a shower of dust as the heavy door slams shut with a resounding
+    boom. A section of the wall to the west crumbles revealing a small door.
+  Name: Orb Room
   Exits:
   - KeyString: west
-    Description: There's an door to the west
-    ValueRoom: {fileID: 11400000, guid: aa39d7feb239d1e458838d329a5bcad3, type: 2}
-  - KeyString: north
-    Description: There's a large heavy door to the north.
-    ValueRoom: {fileID: 11400000, guid: 96f5d2548689c8b47aebf099fda8e56e, type: 2}
+    Description: A small door leads west.
+    ValueRoom: {fileID: 11400000, guid: 43afa4e165780404e92abb34af0c8138, type: 2}
   Interactables: []

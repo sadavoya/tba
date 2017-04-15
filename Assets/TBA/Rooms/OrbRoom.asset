@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65041af5c71d9a74baf590288b150512, type: 3}
+  m_Name: OrbRoom
+  m_EditorClassIdentifier: 
+  Description: 'The room is dimly lit. A glowing orb sits atop a pedestal in the center
+    of the room. '
+  Name: Orb Room
+  Exits:
+  - KeyString: south
+    Description: A large heavy door leads south.
+    ValueRoom: {fileID: 11400000, guid: a7de7bffd6394544c8ced772d9e357b7, type: 2}
+  Interactables: []
