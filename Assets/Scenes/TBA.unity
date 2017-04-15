@@ -107,7 +107,7 @@ Prefab:
     - target: {fileID: 114884889689067218, guid: e3195fbe19100a943a48e428a9e75007,
         type: 2}
       propertyPath: InputActions_Setup.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 224236074622186314, guid: e3195fbe19100a943a48e428a9e75007,
         type: 2}
@@ -232,6 +232,12 @@ Prefab:
       propertyPath: InputActions_Setup.Array.data[3]
       value: 
       objectReference: {fileID: 11400000, guid: f2e34b44cda18974c8aa31ad21d88bfe,
+        type: 2}
+    - target: {fileID: 114884889689067218, guid: e3195fbe19100a943a48e428a9e75007,
+        type: 2}
+      propertyPath: InputActions_Setup.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: b434aca14500a6d43898726dce276076,
         type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e3195fbe19100a943a48e428a9e75007, type: 2}
@@ -483,6 +489,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c882822e915aea7458bf49999038cb35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useableItemList:
+  - {fileID: 11400000, guid: 0cea34ddb675eee47ac718609270019e, type: 2}
   nounsInRoom: []
 --- !u!1 &1766834819
 GameObject:

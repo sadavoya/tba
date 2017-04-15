@@ -85,6 +85,29 @@ public class InteractableItems : MonoBehaviour {
         }
         return null;
     }
+    public void UseItem(string[] separatedInputwords)
+    {
+        string nounToUse = separatedInputwords[1];
+        if (nounsInInventory.Contains(nounToUse))
+        {
+            if (useDict.ContainsKey(nounToUse))
+            {
+                bool actionResult = useDict[nounToUse].DoActionResponse(GC);
+                if (!actionResult)
+                {
+                    GC.logStringWithReturn("Hmm. Nothing happens.");
+                }
+            }
+            else
+            {
+                GC.logStringWithReturn("You can't use " + nounToUse);
+            }
+        }
+        else
+        {
+            GC.logStringWithReturn("There is no " + nounToUse + " in your inventory.");
+        }
+    }
     public void ClearCollections()
     {
         examineDict.Clear();
