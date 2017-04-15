@@ -42,6 +42,14 @@ public class InteractableItems : MonoBehaviour {
             return null;
         }
     }
+    public void DisplayInventory()
+    {
+        GC.logStringWithReturn("You look in your backpack. Inside you have:");
+        for (int i = 0; i < nounsInInventory.Count; i++)
+        {
+            GC.logStringWithReturn(nounsInInventory[i]);
+        }
+    }
     public void ClearCollections()
     {
         examineDict.Clear();
