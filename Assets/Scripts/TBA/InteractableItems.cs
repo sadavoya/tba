@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class InteractableItems : MonoBehaviour {
+    public List<Interactable> useableItemList;
     public Dictionary<string, string> examineDict = new Dictionary<string, string>();
     public Dictionary<string, string> takeDict = new Dictionary<string, string>();
+    public Dictionary<string, ActionResponse> useDict = new Dictionary<string, ActionResponse>();
 
     [HideInInspector]
     public List<string> nounsInRoom = new List<string>();
@@ -33,6 +35,7 @@ public class InteractableItems : MonoBehaviour {
         if (nounsInRoom.Contains(noun))
         {
             nounsInInventory.Add(noun);
+            AddActionResponsesToUseDict();
             nounsInRoom.Remove(noun);
             return takeDict;
         }
@@ -49,6 +52,38 @@ public class InteractableItems : MonoBehaviour {
         {
             GC.logStringWithReturn(nounsInInventory[i]);
         }
+    }
+    public void AddActionResponsesToUseDict()
+    {
+        for (int i = 0; i < nounsInInventory.Count; i++)
+        {
+            var noun = nounsInInventory[i];
+            var interactable = GetInteractableObjectFromUsableList(noun);
+
+            if (interactable == null)
+                continue;
+            for (int j = 0; j < interactable.Interactions.Length; j++)
+            {
+                var interaction = interactable.Interactions[j];
+                if (interaction.ActionResponse == null)
+                    continue;
+                if (!useDict.ContainsKey(noun))
+                {
+                    useDict.Add(noun, interaction.ActionResponse);
+                }
+            }
+        }
+    }
+    private Interactable GetInteractableObjectFromUsableList(string noun)
+    {
+        for (int i = 0; i < useableItemList.Count; i++)
+        {
+            if (useableItemList[i].Noun == noun)
+            {
+                return useableItemList[i];
+            }
+        }
+        return null;
     }
     public void ClearCollections()
     {
